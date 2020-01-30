@@ -24,8 +24,8 @@ const AP_Param::GroupInfo AP_MotorsHeli_Swash::var_info[] = {
 
     // @Param: TYPE
     // @DisplayName: Swashplate Type
-    // @Description: H3 is generic, three-servo only. H3_120/H3_140 plates have Motor1 left side, Motor2 right side, Motor3 elevator in rear. HR3_120/HR3_140 have Motor1 right side, Motor2 left side, Motor3 elevator in front - use H3_120/H3_140 and reverse servo and collective directions as necessary. For all H3_90 swashplates use H4_90 and don't use servo output for the missing servo. For H4-90 Motors1&2 are left/right respectively, Motors3&4 are rear/front respectively. For H4-45 Motors1&2 are LF/RF, Motors3&4 are LR/RR 
-    // @Values: 0:H3 Generic,1:H1 non-CPPM,2:H3_140,3:H3_120,4:H4_90,5:H4_45
+    // @Description: H3 is generic, three-servo only. H3_120/H3_140 plates have Motor1 left side, Motor2 right side, Motor3 elevator in rear. HR3_120/HR3_140 have Motor1 right side, Motor2 left side, Motor3 elevator in front - use H3_120/H3_140 and reverse servo and collective directions as necessary. For all H3_90 swashplates use H4_90 and don't use servo output for the missing servo. For H4-90 Motors1&2 are left/right respectively, Motors3&4 are rear/front respectively. For H4-45 Motors1&2 are LF/RF, Motors3&4 are LR/RR. For Coax 2 H3 -135s
+    // @Values: 0:H3 Generic,1:H1 non-CPPM,2:H3_140,3:H3_120,4:H4_90,5:H4_45, 6:H3_Coax
     // @User: Standard
     AP_GROUPINFO("TYPE", 1, AP_MotorsHeli_Swash, _swashplate_type, SWASHPLATE_TYPE_H3_120),
 
@@ -83,6 +83,30 @@ const AP_Param::GroupInfo AP_MotorsHeli_Swash::var_info[] = {
     // @Increment: 1
     AP_GROUPINFO("H3_PHANG", 8, AP_MotorsHeli_Swash, _phase_angle, 0),
    
+    // @Param: H3_SV4_POS
+    // @DisplayName: Swashplate Servo 1 Position, Lower
+    // @Description: Azimuth position on swashplate for servo 1 with the front of the heli being 0 deg
+    // @Range: -180 180
+    // @Units: deg
+    // @User: Advanced
+    AP_GROUPINFO("H3_SV4_POS", 9, AP_MotorsHeli_Swash, _servo4_pos, -60),
+
+    // @Param: H3_SV5_POS
+    // @DisplayName: Swashplate Servo 2 Position
+    // @Description: Azimuth position on swashplate for servo 2 with the front of the heli being 0 deg
+    // @Range: -180 180
+    // @Units: deg
+    // @User: Advanced
+    AP_GROUPINFO("H3_SV5_POS", 10, AP_MotorsHeli_Swash, _servo5_pos, 60),
+
+    // @Param: H3_SV6_POS
+    // @DisplayName: Swashplate Servo 3 Position
+    // @Description: Azimuth position on swashplate for servo 3 with the front of the heli being 0 deg
+    // @Range: -180 180
+    // @Units: deg
+    // @User: Advanced
+    AP_GROUPINFO("H3_SV6_POS", 11, AP_MotorsHeli_Swash, _servo6_pos, 180),
+
     AP_GROUPEND
 };
 

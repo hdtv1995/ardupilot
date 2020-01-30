@@ -208,6 +208,28 @@
     <ClCompile Include="ArduCopter\UserCode.cpp" />
     <ClCompile Include="ArduCopter\UserParameters.cpp" />
     <ClCompile Include="ArduCopter\version.cpp" />
+    <ClCompile Include="libraries\AP_BLHeli\AP_BLHeli.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_Motors6DOF.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsCoax.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsHeli.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsHeli_Dual.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsHeli_Quad.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsHeli_RSC.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsHeli_Single.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsHeli_Swash.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsMatrix.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsMatrixTS.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsMulticopter.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsSingle.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsTailsitter.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_MotorsTri.cpp" />
+    <ClCompile Include="libraries\AP_Motors\AP_Motors_Class.cpp" />
+    <ClCompile Include="libraries\AP_RCMapper\AP_RCMapper.cpp" />
+    <ClCompile Include="libraries\RC_Channel\RC_Channel.cpp" />
+    <ClCompile Include="libraries\RC_Channel\RC_Channels.cpp" />
+    <ClCompile Include="libraries\SRV_Channel\SRV_Channel.cpp" />
+    <ClCompile Include="libraries\SRV_Channel\SRV_Channels.cpp" />
+    <ClCompile Include="libraries\SRV_Channel\SRV_Channel_aux.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArduCopter\afs_copter.h" />
@@ -228,6 +250,29 @@
     <ClInclude Include="ArduCopter\UserParameters.h" />
     <ClInclude Include="ArduCopter\UserVariables.h" />
     <ClInclude Include="ArduCopter\version.h" />
+    <ClInclude Include="libraries\AP_BLHeli\AP_BLHeli.h" />
+    <ClInclude Include="libraries\AP_BLHeli\blheli_4way_protocol.h" />
+    <ClInclude Include="libraries\AP_BLHeli\msp_protocol.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_Motors.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_Motors6DOF.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsCoax.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsHeli.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsHeli_Dual.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsHeli_Quad.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsHeli_RSC.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsHeli_Single.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsHeli_Swash.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsMatrix.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsMatrixTS.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsMulticopter.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsSingle.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsTailsitter.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_MotorsTri.h" />
+    <ClInclude Include="libraries\AP_Motors\AP_Motors_Class.h" />
+    <ClInclude Include="libraries\AP_RCMapper\AP_RCMapper.h" />
+    <ClInclude Include="libraries\RC_Channel\RC_Channel.h" />
+    <ClInclude Include="libraries\RC_Channel\RC_Channels_VarInfo.h" />
+    <ClInclude Include="libraries\SRV_Channel\SRV_Channel.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArduCopter\Makefile.waf" />
