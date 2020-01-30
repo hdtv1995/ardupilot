@@ -56,9 +56,10 @@ private:
     // internal variables
     SwashPlateType       _swash_type;                 // Swashplate type
     CollectiveDirection  _collective_direction;       // Collective control direction, normal or reversed
-    float                _rollFactor[4];              // Roll axis scaling of servo output based on servo position
-    float                _pitchFactor[4];             // Pitch axis scaling of servo output based on servo position
-    float                _collectiveFactor[4];        // Collective axis scaling of servo output based on servo position
+    float                _rollFactor[6];              // Roll axis scaling of servo output based on servo position
+    float                _pitchFactor[6];             // Pitch axis scaling of servo output based on servo position
+    float                _collectiveFactor[6];        // Collective axis scaling of servo output based on servo position
+    float                _yawFactor[6]
     int8_t               _make_servo_linear;          // Sets servo output to be linearized
 
     // parameters
