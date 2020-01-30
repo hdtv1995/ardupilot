@@ -138,6 +138,15 @@ void AP_MotorsHeli_Swash::calculate_roll_pitch_collective_factors()
         _collectiveFactor[CH_2] = 1;
         _collectiveFactor[CH_3] = 1;
         _collectiveFactor[CH_4] = 1;
+    }
+    else if (_swash_type == SWASHPLATE_TYPE_H3_Coax) {
+        // collective mixer for six-servo CCPM coax
+        _collectiveFactor[CH_1] = 1;
+        _collectiveFactor[CH_2] = 1;
+        _collectiveFactor[CH_3] = 1;
+        _collectiveFactor[CH_4] = 1;
+        _collectiveFactor[CH_5] = 1;
+        _collectiveFactor[CH_6] = 1;
     } else {
         // collective mixer for three-servo CCPM
         _collectiveFactor[CH_1] = 1;
@@ -167,6 +176,25 @@ void AP_MotorsHeli_Swash::calculate_roll_pitch_collective_factors()
         _pitchFactor[CH_1] = 1;
         _pitchFactor[CH_2] = 1;
         _pitchFactor[CH_3] = -1;
+    } else if (_swash_type == SWASHPLATE_TYPE_H3_Coax) {    //
+        // Six-servo roll/pitch mixer for H3-Coax
+        // Three-servo roll/pitch mixer for adjustable servo position
+        // can be any style swashplate, phase angle is adjustable
+        _rollFactor[CH_1] = cosf(radians(_servo1_pos + 90 - _phase_angle));
+        _rollFactor[CH_2] = cosf(radians(_servo2_pos + 90 - _phase_angle));
+        _rollFactor[CH_3] = cosf(radians(_servo3_pos + 90 - _phase_angle));
+        _pitchFactor[CH_1] = cosf(radians(_servo1_pos - _phase_angle));
+        _pitchFactor[CH_2] = cosf(radians(_servo2_pos - _phase_angle));
+        _pitchFactor[CH_3] = cosf(radians(_servo3_pos - _phase_angle));
+
+        _rollFactor[CH_4] = cosf(radians(_servo4_pos + 90 - _phase_angle));
+        _rollFactor[CH_5] = cosf(radians(_servo5_pos + 90 - _phase_angle));
+        _rollFactor[CH_6] = cosf(radians(_servo6_pos + 90 - _phase_angle));
+        _pitchFactor[CH_4] = -cosf(radians(_servo4_pos - _phase_angle));
+        _pitchFactor[CH_5] = -cosf(radians(_servo5_pos - _phase_angle));
+        _pitchFactor[CH_6] = -cosf(radians(_servo6_pos - _phase_angle));
+
+        //add yawFactor
     } else if (_swash_type == SWASHPLATE_TYPE_H3_120) {
         // three-servo roll/pitch mixer for H3-120
         // HR3-120 uses reversed servo and collective direction in heli setup
