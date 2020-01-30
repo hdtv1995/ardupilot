@@ -400,6 +400,35 @@ float AP_MotorsHeli_Dual::get_swashplate (int8_t swash_num, int8_t swash_axis, f
                 swash_tilt = -0.45f * _dcp_scaler * roll_input + coll_input;
             }
         }
+    }
+    else if (_dual_mode == AP_MOTORS_HELI_DUAL_MODE_COAX) { // AP_MOTORS_HELI_DUAL_MODE_COAX
+     // roll tilt
+        if (swash_axis == AP_MOTORS_HELI_DUAL_SWASH_AXIS_ROLL) {
+            if (swash_num == 1) {
+                swash_tilt = roll_input;
+            }
+            else if (swash_num == 2) {
+                swash_tilt = roll_input;
+            }
+        }
+        else if (swash_axis == AP_MOTORS_HELI_DUAL_SWASH_AXIS_PITCH) {
+            // pitch tilt
+            if (swash_num == 1) {
+                swash_tilt = pitch_input;
+            }
+            else if (swash_num == 2) {
+                swash_tilt = -pitch_input;
+            }
+        }
+        else if (swash_axis == AP_MOTORS_HELI_DUAL_SWASH_AXIS_COLL) {
+            // collective
+            if (swash_num == 1) {
+                swash_tilt = coll_input - _yaw_scaler * yaw_input;
+            }
+            else if (swash_num == 2) {
+                swash_tilt = coll_input + _yaw_scaler * yaw_input;
+            }
+        }
     } else { // AP_MOTORS_HELI_DUAL_MODE_TANDEM
         // roll tilt
         if (swash_axis == AP_MOTORS_HELI_DUAL_SWASH_AXIS_ROLL) {
