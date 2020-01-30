@@ -92,7 +92,7 @@ const AP_Param::GroupInfo AP_MotorsHeli_Swash::var_info[] = {
     AP_GROUPINFO("H3_SV4_POS", 9, AP_MotorsHeli_Swash, _servo4_pos, -60),
 
     // @Param: H3_SV5_POS
-    // @DisplayName: Swashplate Servo 2 Position
+    // @DisplayName: Swashplate Servo 2 Position, Lower
     // @Description: Azimuth position on swashplate for servo 2 with the front of the heli being 0 deg
     // @Range: -180 180
     // @Units: deg

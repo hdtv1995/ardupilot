@@ -13,7 +13,8 @@ enum SwashPlateType {
     SWASHPLATE_TYPE_H3_140,
     SWASHPLATE_TYPE_H3_120,
     SWASHPLATE_TYPE_H4_90,
-    SWASHPLATE_TYPE_H4_45
+    SWASHPLATE_TYPE_H4_45,
+    SWASHPLATE_TYPE_H3_Coax
 };
 
 // collective direction
@@ -68,6 +69,9 @@ private:
     AP_Int16 _servo1_pos;                        // servo1 azimuth position on swashplate with front of heli being 0 deg
     AP_Int16 _servo2_pos;                        // servo2 azimuth position on swashplate with front of heli being 0 deg
     AP_Int16 _servo3_pos;                        // servo3 azimuth position on swashplate with front of heli being 0 deg
+    AP_Int16 _servo4_pos;                        // servo1 azimuth position on swashplate with front of heli being 0 deg
+    AP_Int16 _servo5_pos;                        // servo2 azimuth position on swashplate with front of heli being 0 deg
+    AP_Int16 _servo6_pos;                        // servo3 azimuth position on swashplate with front of heli being 0 deg
     AP_Int16 _phase_angle;                       // Phase angle correction for rotor head.  If pitching the swash forward induces 
                                                  // a roll, this can be negative depending on mechanics.
 
