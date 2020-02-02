@@ -293,7 +293,7 @@ void AP_MotorsHeli_Dual::output_test_seq(uint8_t motor_seq, int16_t pwm)
         rc_write(AP_MOTORS_MOT_6, pwm);
         break;
     case 7:
-        // main rotor
+        // main rotor ( Rotor 1)
         rc_write(AP_MOTORS_HELI_RSC, pwm);
         break;
     default:
@@ -543,6 +543,8 @@ void AP_MotorsHeli_Dual::move_actuators(float roll_out, float pitch_out, float c
         // add differential collective pitch yaw compensation
         if (_dual_mode == AP_MOTORS_HELI_DUAL_MODE_TRANSVERSE) {
             yaw_compensation = _dcp_yaw_effect * roll_out;
+        } else if (_dual_mode == AP_MOTORS_HELI_DUAL_MODE_COAX) {
+            yaw_compensation = 0.0f;
         } else { // AP_MOTORS_HELI_DUAL_MODE_TANDEM
             yaw_compensation = _dcp_yaw_effect * pitch_out;
         }

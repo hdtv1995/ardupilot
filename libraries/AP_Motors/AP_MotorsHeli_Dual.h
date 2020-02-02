@@ -16,7 +16,7 @@
 // tandem modes
 #define AP_MOTORS_HELI_DUAL_MODE_TANDEM                0 // tandem mode (rotors front and aft)
 #define AP_MOTORS_HELI_DUAL_MODE_TRANSVERSE            1 // transverse mode (rotors side by side)
-#define AP_MOTORS_HELI_DUAL_MODE_COAX                  3 // transverse mode (rotors side by side)
+#define AP_MOTORS_HELI_DUAL_MODE_COAX                  2 // Coxial mode (Stacked Rotors)
 
 // tandem modes
 #define AP_MOTORS_HELI_DUAL_SWASH_AXIS_PITCH           0 // swashplate pitch tilt axis
